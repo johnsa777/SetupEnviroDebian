@@ -26,8 +26,8 @@ done
 sudo rm /etc/issue
 sudo rm /etc/motd
 #update system
-apt-get update -y
-apt-get upgrade -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
 #install software
 sudo apt-get install nmap locate vim -y
 #setup cron job to update system
@@ -36,10 +36,10 @@ if !(crontab -l | grep -q 'apt-get update'); then
         #echo new cron into cron file
         echo "08 04 * * * apt-get update;apt-get upgrade;" >> mycron
         #install new cron file
-        crontab mycron
+        sudo crontab mycron
         rm mycron
 fi
-#Turn color n on in vim if there are no vim settings
+#Turn color on in vim
 if (grep -q "syntax on" "/root/.vimrc") 
 then
         echo 'vim settings present'
