@@ -55,8 +55,8 @@ then
 else
         sudo apt-get install zsh -y
         sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-        #dowload Honukai theme and reloading shell
-        sed -i -e 's/robbyrussell/honukai/' /root/.zshrc  #set theme
+        #set maran theme
+        sed -i -e 's/robbyrussell/maran/' /root/.zshrc  #set theme
         source .zshrc #reloading shell settings
 fi
 echo 'END OF SCRIPT'
