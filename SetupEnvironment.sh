@@ -26,15 +26,15 @@ done
 sudo rm /etc/issue
 sudo rm /etc/motd
 #update system
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt update -y
+sudo apt dist-upgrade -y
 #install software
-sudo apt-get install nmap locate vim -y
-#setup cron job to update system
-if !(crontab -l | grep -q 'apt-get update'); then
+sudo apt install nmap locate vim -y
+#setup cron job to update system continuously 
+if !(crontab -l | grep -q 'apt update'); then
         crontab -l > mycron
         #echo new cron into cron file
-        echo "08 04 * * * apt-get update;apt-get upgrade;" >> mycron
+        echo "08 04 * * * apt update -y;apt dist-upgrade -y;" >> mycron
         #install new cron file
         sudo crontab mycron
         rm mycron
@@ -53,7 +53,7 @@ if [ -e /root/.oh-my-zsh ]
 then
         echo 'zsh present'
 else
-        sudo apt-get install zsh -y
+        sudo apt install zsh -y
         sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
         #set maran theme
         sed -i -e 's/robbyrussell/maran/' /root/.zshrc  #set theme
