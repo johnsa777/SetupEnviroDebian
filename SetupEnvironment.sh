@@ -1,6 +1,6 @@
 #!/bin/bash
-#Shell to setup Debian environment
-#This setup is appropriate for ephemeral sessions or new systems
+#Shell to setup Kali environment
+#This setup is appropriate for ephemeral sessions or new systems in a VirtualBox environment
 
 #Change system password
 while true; do
@@ -25,6 +25,11 @@ done
 #Remove identification banner
 sudo rm /etc/issue
 sudo rm /etc/motd
+
+#Setup Kali Repos to enable updating
+echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" >> /etc/apt/sources.list
+echo "deb-src http://http.kali.org/kali kali-rolling main non-free contrib" >> /etc/apt/sources.list
+
 #update system
 sudo apt update -y
 sudo apt dist-upgrade -y
