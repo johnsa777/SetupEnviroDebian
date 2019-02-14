@@ -33,6 +33,9 @@ echo "deb-src http://http.kali.org/kali kali-rolling main non-free contrib" >> /
 #update system
 sudo apt update -y
 sudo apt dist-upgrade -y
+#install VirtualBox guest editions 
+sudo apt-get install virtualbox-guest-dkms -y
+
 #install software
 sudo apt install nmap locate vim -y
 #setup cron job to update system continuously 
