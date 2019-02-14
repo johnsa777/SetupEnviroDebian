@@ -35,6 +35,7 @@ sudo apt update -y
 sudo apt dist-upgrade -y
 #install VirtualBox guest editions 
 sudo apt-get install virtualbox-guest-dkms -y
+sudo apt-get install -y virtualbox-guest-x11
 
 #install software
 sudo apt install nmap locate vim -y
