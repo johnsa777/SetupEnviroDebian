@@ -4,7 +4,7 @@
 
 #Change system password
 while true; do
-    read -p "Would you like to change your password? (y/n)" yn
+    read -p "Would you like to change your user password? (y/n)" yn
     case $yn in
         [Yy]* ) sudo passwd; break;;
         [Nn]* ) break;;
@@ -30,6 +30,7 @@ sudo apt update -y
 sudo apt dist-upgrade -y
 #install software
 sudo apt install nmap locate vim -y
+sudo apt install htop -y
 #setup cron job to update system continuously 
 if !(crontab -l | grep -q 'apt update'); then
         crontab -l > mycron
