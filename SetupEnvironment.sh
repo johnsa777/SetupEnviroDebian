@@ -35,7 +35,7 @@ sudo apt install htop -y
 if !(crontab -l | grep -q 'apt update'); then
         crontab -l > mycron
         #echo new cron into cron file
-        echo "08 04 * * * apt update -y;apt dist-upgrade -y;apt autoremove -y" >> mycron
+        echo "08 04 * * * apt update -y;apt dist-upgrade -y;apt clean -y" >> mycron
         #install new cron file
         sudo crontab mycron
         rm mycron
