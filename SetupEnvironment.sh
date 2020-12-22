@@ -4,7 +4,7 @@
 
 #Change system password
 while true; do
-    read -p "\033[42mWould you like to change your user password? (y/n)\033[m" yn
+    read -p "Would you like to change your user password? (y/n)" yn
     case $yn in
         [Yy]* ) sudo passwd; break;;
         [Nn]* ) break;;
