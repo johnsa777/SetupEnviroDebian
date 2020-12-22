@@ -2,7 +2,7 @@
 #Shell to setup Debian environment
 #https://github.com/johnsa777/SetupEnviroDebian
 #This setup is appropriate for ephemeral sessions or new systems
-#To run make sure you make the script executable "chmod 755 SetupEnviroDebian.sh"
+#To run make the script executable "chmod 755 SetupEnviroDebian.sh"
 #Run with sudo
 
 #Setting up terminal color and saying hello
