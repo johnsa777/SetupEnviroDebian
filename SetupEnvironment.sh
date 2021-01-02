@@ -2,7 +2,7 @@
 #Shell to setup Debian environment
 #https://github.com/johnsa777/SetupEnviroDebian
 #This setup is appropriate for ephemeral sessions or new systems
-#To run make the script executable "chmod 755 SetupEnviroDebian.sh"
+#To run make sure you make the script executable "chmod 755 SetupEnviroDebian.sh"
 #Run with sudo
 
 #Setting up terminal color and saying hello
@@ -72,10 +72,12 @@ sudo rm /etc/motd
 echo $(echo -e $GREEN"Updating system"$RESET);
 sudo apt update -y
 sudo apt dist-upgrade -y
-#Installing nmap, vim, htop
-echo $(echo -e $GREEN"Installing nmap, vim, htop"$RESET);
-sudo apt install nmap locate vim -y
-sudo apt install htop -y
+#Installing nmap, vim, htop, tcpdump, wireshark
+echo $(echo -e $GREEN"Installing nmap, locate, vim, htop, tcpdump, wireshark"$RESET);
+sudo apt install nmap locate vim htop tcpdump wireshark -y
+
+echo $(echo -e $GREEN"Installing volatility, nc, python "$RESET);
+sudo apt install volatility nc python  -y 
 #Turning color on in vim
 echo $(echo -e $GREEN"Turning color on in vim"$RESET);
 if (grep -q "syntax on" "/root/.vimrc") 
